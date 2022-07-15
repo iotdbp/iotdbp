@@ -7,8 +7,21 @@
             box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
   }
+
+  .main{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  h1{
+    margin: 20px;
+  }
   
-.main{
+.content{
     margin: 20px;
     padding: 20PX;
     width: 720px;
