@@ -47,7 +47,7 @@ body {
   margin: 0px;
   padding: 0px;
   margin-bottom: 20px;
-  width: 720px;
+  width: 1080px;
   max-width: 98%;
   background: mintcream;
   border-radius: 8px;
@@ -56,7 +56,7 @@ body {
 }
 
 .section {
-  width: 720px;
+  width: 1080px;
   max-width: 98%;
   margin: 0px;
   display: -webkit-box;
@@ -76,7 +76,7 @@ body {
 }
 
 .subsection {
-  width: 720px;
+  width: 1080px;
   max-width: 98%;
   margin: 0px;
   display: -webkit-box;
@@ -92,9 +92,9 @@ body {
 }
 
 .step {
-  width: 720px;
+  width: 1080px;
   max-width: 98%;
-  margin-left: 10px;
+  margin-left: 15px;
   margin-top: 5px;
   margin-bottom: 5px;
   display: -webkit-box;
@@ -110,16 +110,37 @@ body {
 }
 
 .description {
-  -webkit-text-decoration: #000030;
-          text-decoration: #000030;
-  text-align: justify;
-  width: 300px;
+  color: #000030;
+  width: 400px;
+  max-width: 98%;
+  margin: 15px;
+}
+
+.code {
+  color: green;
+  width: 400px;
   max-width: 98%;
   margin: 5px;
+  margin-left: 30px;
+}
+
+.double_description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 400px;
+  max-width: 98%;
 }
 
 .snapshot {
-  width: 300px;
+  width: 550px;
   margin: 5px;
   max-width: 98%;
 }
@@ -127,23 +148,27 @@ body {
 .subsection_title {
   -ms-flex-item-align: start;
       align-self: flex-start;
-  margin: 10px;
+  margin-top: 20px;
+  margin-bottom: 15px;
   margin-left: 30px;
 }
 
 .section_title {
-  margin: 10px;
+  margin-top: 15px;
+  margin-bottom: 10px;
   font-weight: 900;
 }
 
 .step_title {
-  margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   margin-left: 20px;
   font-weight: 900;
 }
 
 .main_title {
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   font-weight: 1200;
 }
 /*# sourceMappingURL=style.css.map */
