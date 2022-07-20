@@ -47,7 +47,7 @@ body {
   margin: 0px;
   padding: 0px;
   margin-bottom: 20px;
-  width: 1080px;
+  width: 1024px;
   max-width: 98%;
   background: mintcream;
   border-radius: 8px;
@@ -56,7 +56,7 @@ body {
 }
 
 .section {
-  width: 1080px;
+  width: 1024px;
   max-width: 98%;
   margin: 0px;
   display: -webkit-box;
@@ -76,7 +76,7 @@ body {
 }
 
 .subsection {
-  width: 1080px;
+  width: 1024px;
   max-width: 98%;
   margin: 0px;
   display: -webkit-box;
@@ -92,7 +92,7 @@ body {
 }
 
 .step {
-  width: 1080px;
+  width: 1024px;
   max-width: 98%;
   margin-left: 15px;
   margin-top: 5px;
@@ -113,7 +113,7 @@ body {
   color: #000030;
   width: 400px;
   max-width: 98%;
-  margin: 15px;
+  margin: 30px 10px;
 }
 
 .code {
@@ -140,23 +140,33 @@ body {
 }
 
 .snapshot {
-  width: 550px;
+  width: 500px;
   margin: 5px;
+  max-width: 98%;
+}
+
+.mobile_snapshot {
+  width: 300px;
+  margin: 15px;
+  margin-bottom: 25px;
   max-width: 98%;
 }
 
 .subsection_title {
   -ms-flex-item-align: start;
       align-self: flex-start;
-  margin-top: 20px;
-  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 10px;
   margin-left: 30px;
 }
 
 .section_title {
-  margin-top: 15px;
-  margin-bottom: 10px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: 20px;
   font-weight: 900;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .step_title {
