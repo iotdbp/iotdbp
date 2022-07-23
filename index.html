@@ -1,416 +1,615 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="logo/adb_logo_1.png" />
+
+    <script src="node_modules\jquery\dist\jquery.js"></script>
+    <script src="index.js"></script>
     <title>IoTDashboard User Guide</title>
 </head>
+
 <body>
 
     <div class="main">
-        <h1 class="main_title">IoTDashboard User Guide</h1>
-        <div class="content">
-
-            <h2 class="section_title" id="firebase_section_title">1. Firebase Setup</h2>
-            <div id="firebase_section" class="section">
-
-                <!-- ----------------------------------------------------------------------------------- -->
-
-                <h3 class="subsection_title" id="firebase_intro_subsection_title">1.1. Firebase Intro</h3>
-                <div class="subsection" id="firebase_intro_subsection">
-                    <p class="description">
-                        Firebase is an app development platform that helps you build and grow apps and games users love. Backed by Google and trusted by millions of businesses around the world.
-                    </p>
-                    <img src="images/firebase_logo.png" alt="" class="snapshot">
-                </div>
-
-                <!-- ----------------------------------------------------------------------------------- -->
-
-                <h3 class="subsection_title" id="create_firebase_project_subsection_title">1.2. Create Firebase Project</h3>
-                <div class="subsection" id="create_firebase_project_subsection">
-
-                    <div class="step" id="create_gmail_account_step">
-                        <p class="description">
-                            1. Create a gmail account and login.
-                        </p>
-                        <img src="" alt="" class="snapshot">
-                    </div>
-
-                    <div class="step" id="go_firebase_console_step">
-                        <p class="description">
-                            2. Navigate to <a href="https://console.firebase.google.com/" target="_blank" rel="noopener noreferrer">Firebase console.</a>
-                        </p>
-                        <img src="" alt="" class="snapshot">
-                    </div>
-
-                    <div class="step" id="create_new_project_step">
-                        <p class="description">
-                            3. Click on "Create a project" button.
-                        </p>
-                        <img src="images/1.create_firebase_project/1.create_new_project.png" alt="" class="snapshot">
-                    </div>
-
-                    <div class="step" id="create_project_name_step">
-                        <p class="description">
-                            4. Give your project a name.
-                        </p>
-                        <img src="images/1.create_firebase_project/2.create_new_project_name.png" alt="" class="snapshot">
-                    </div>
-
-                    <div class="step" id="enable_google_analytics_step">
-                        <p class="description">
-                            5. Click "Continue" button.
-                        </p>
-                        <img src="images/1.create_firebase_project/3.google_analytics.png" alt="" class="snapshot">
-                    </div>
-
-                    <div class="step" id="choose_google_analytics_account_step">
-                        <p class="description">
-                            6. Click "Create project" button.
-                        </p>
-                        <img src="images/1.create_firebase_project/4.google_analytics_account.png" alt="" class="snapshot">
-                    </div>
-
-
-                </div>
-
-                <!-- ----------------------------------------------------------------------------------- -->
-
-                <h3 class="subsection_title" id="create_realtime_db_subsection_title">1.3. Create Realtime Database</h3>
-                <div class="subsection" id="create_realtime_db_subsection">
-
-                    <div class="step" id="create_realtime_db_step">
-                        <p class="description">
-                            1. In the navigation menu on the left, click on "Build" section, then click on "Realtime Database" option and hit the "Create Database" button in the middle of the screen.
-                        </p>
-                        <img src="images/2.create_realtime_db/1.create_realtime_db.png" alt="" class="snapshot">
-                    </div>
-
-                    <div class="step" id="choose_realtime_db_location_step">
-                        <p class="description">
-                            2. Choose a location where you want your realtime database to be stored and click "Next".
-                        </p>
-                        <img src="images/2.create_realtime_db/2.realtime_db_location.png" alt="" class="snapshot">
-                    </div>
-
-                    <div class="step" id="choose_security_mode_step">
-                        <p class="description">
-                            3. Choose any of the two security mode and click "Enable".
-                        </p>
-                        <img src="images/2.create_realtime_db/3.define_security_rules.png" alt="" class="snapshot">
-                    </div>
-
-                    <div class="step" id="got_to_security_rules_step">
-                        <p class="description">
-                            4. After the realtime database is created, you want to define the security rules first of all. For that click on "Rules" tab in the "Realtime Database" page.
-                        </p>
-                        <img src="images/2.create_realtime_db/4.realtime_db_page.png" alt="" class="snapshot">
-                    </div>
-
-                    <div class="step" id="setup_security_rules_step">
-
-                        <div class="double_description">
-                            <p class="description">
-                                5. Use the below security rules then click "Publish" button.
-                            </p>
-                            <p class="code">
-                                {<br>
-                                    &nbsp;&nbsp;"rules": {<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"$uid": {<br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".write": "$uid === auth.uid",<br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".read": "$uid === auth.uid",<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"MaintainedConnectionPoint": {<br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".write": true,<br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".read": true,<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                                    &nbsp;&nbsp;}<br>
-                                }<br>
-                            </p>
-                        </div>
-                        <img src="images/2.create_realtime_db/5.realtime_db_rules.png" alt="" class="snapshot">
-                    </div>
-
-
-                </div>
-
-
-
-                <!-- ----------------------------------------------------------------------------------- -->
-
-                <h3 class="subsection_title" id="define_authentication_subsection_title">1.4. Define User Authentication Method</h3>
-                <div class="subsection" id="define_authentication_subsection">
-
-                    <div class="step" id="access_authentication_page_step">
-                        <p class="description">
-                            1. In order for the Firebase to authenticate the users trying to access the data, you have to define the authentication method.
-                            For that, in the navigation menu on the left, click on "Build" section, then click on "Authentication" option and hit the "Create Database" button in the middle of the authentication page. 
-                        </p>
-                        <img src="images/3.authentication_method/1.access_authentication_page.png" alt="" class="snapshot">
-                    </div>
-
-                    <div class="step" id="choose_authentication_method_step">
-                        <p class="description">
-                            2. Under "Sign-in method" tab, choose "Email/Password" as the sign-in method.
-                        </p>
-                        <img src="images/3.authentication_method/2.choose_authentication_method.png" alt="" class="snapshot">
-                    </div>
-
-                    <div class="step" id="activate_email_password_method_step">
-                        <p class="description">
-                            3. Enable "Email/Password" authentication method and click "Save".
-                        </p>
-                        <img src="images/3.authentication_method/3.enable_email_password_method.png" alt="" class="snapshot">
-                    </div>
-
-
-                </div>
-
-
-                <!-- ----------------------------------------------------------------------------------- -->
-
-                <h3 class="subsection_title" id="register_iotdashboard_app_subsection_title">1.5. Register IoTDashboard App in Firebase</h3>
-                <div class="subsection" id="register_iotdashboard_app_subsection">
-
-                    <div class="step" id="go_to_project_settings_page_step">
-                        <p class="description">
-                            1. To be able to integrate the IoTDashboard app with your Firebase project, you have to register the app in the project.
-                            For that, click on the settings icon in the navigation menu on the left and choose "Project settings".
-                        </p>
-                        <img src="images/4.register_iotdashboard_app/1.go_to_project_settings.png" alt="" class="snapshot">
-                    </div>
-
-                    <div class="step" id="click_on_android_icon_step">
-                        <p class="description">
-                            2. Under "General" tab, click on the android icon within "Your apps" section.
-                        </p>
-                        <img src="images/4.register_iotdashboard_app/2.click_on_android_icon.png" alt="" class="snapshot">
-                    </div>
-
-                    <div class="step" id="add_the_package_name_step">
-
-
-                        <div class="double_description">
-                            <p class="description">
-                                3. Fill in the "Android package name" input with:
-                            </p>
-                            <p class="code">
-                                com.kandroid.iotdashboard
-                            </p>
-                        </div>
-                        <img src="images/4.register_iotdashboard_app/3.add_the_package_name.png" alt="" class="snapshot">
-                    </div>
-
-                    <div class="step" id="next_1_step">
-                        <p class="description">
-                            4. Click "Next".
-                        </p>
-                        <img src="images/4.register_iotdashboard_app/4.next_1.png" alt="" class="snapshot">
-                    </div>
-
-                    <div class="step" id="next_2_step">
-                        <p class="description">
-                            5. Click "Next".
-                        </p>
-                        <img src="images/4.register_iotdashboard_app/5.next_2.png" alt="" class="snapshot">
-                    </div>
-
-                    <div class="step" id="continue_to_console_step">
-                        <p class="description">
-                            6. Click "Continue to console".
-                        </p>
-                        <img src="images/4.register_iotdashboard_app/6.continue_to_console.png" alt="" class="snapshot">
-                    </div>
-
-                    <div class="step" id="continue_to_console_step">
-                        <p class="description">
-                            7. Now you are ready to use the IoTDashboard app.
-                        </p>
-                        <img src="" alt="" class="snapshot">
-                    </div>
-
-                </div>
-
-
-                <!-- ----------------------------------------------------------------------------------- -->
-
-            <h2 class="section_title" id="iotdashboard_section_title">2. IoTDashboard App Setup</h2>
-            <div id="firebase_section" class="section">
-
-                <!-- ----------------------------------------------------------------------------------- -->
-
-                <h3 class="subsection_title" id="connect_iotdashboard_to_firebase_subsection_title">2.1. Connect IoTDashboard App to Firebase</h3>
-                <div class="subsection" id="connect_iotdashboard_to_firebase_subsection">
-
-                    <div class="step" id="go_to_project_settings_from_android_step">
-                        <p class="description">
-                            1. In order to connect the IoTDashboard app with your Firebase project you need to include a configuration file named google-services.json file into your app.
-                            To do that, login to your Firebase console from your android phone, then go to your project settings.
-                        </p>
-                        <img src="images/5.connect_iotdashboard_to_firebase/1.go_to_project_settings.png" alt="" class="mobile_snapshot">
-                    </div>
-
-                    <div class="step" id="download_google_services_json_file_step">
-                        <p class="description">
-                            2. Scroll down to "Your apps" section and download "google-services.json" file.
-                        </p>
-                        <img src="images/5.connect_iotdashboard_to_firebase/2.download_google_services_gson_file.png" alt="" class="mobile_snapshot">
-                    </div>
-
-                    <div class="step" id="go_to_connect_to_firebase_activity_step">
-                        <p class="description">
-                            3. Open the IoTDashboard app and click on the menu icon on the top left then click on "Connect to Firebase" option.
-                        </p>
-                        <img src="images/5.connect_iotdashboard_to_firebase/3.go_to_connect_to_firebase_activity.png" alt="" class="mobile_snapshot">
-                    </div>
-
-                    <div class="step" id="browse_for_google_services_json_file_step">
-                        <p class="description">
-                            4. On the "Firebase Connection" screen, click on browse.
-                        </p>
-                        <img src="images/5.connect_iotdashboard_to_firebase/4.browse_for_google_services_json_file.png" alt="" class="mobile_snapshot">
-                    </div>
-
-                    <div class="step" id="select_google_services_json_file_step">
-                        <p class="description">
-                            5. Select the "google-services.json" file you just downloaded.
-                        </p>
-                        <img src="images/5.connect_iotdashboard_to_firebase/5.select_google_services_json_file.png" alt="" class="mobile_snapshot">
-                    </div>
-
-                    <div class="step" id="click_connect_step">
-                        <p class="description">
-                            6. Click on "Connect" button.
-                        </p>
-                        <img src="images/5.connect_iotdashboard_to_firebase/6.click_connect.png" alt="" class="mobile_snapshot">
-                    </div>
-
-                    <div class="step" id="connection_to_firebase_status_step">
-                        <p class="description">
-                            <b>7.</b> If the connection with Firebase is established successfully, you should see the Firebase connection status led on the top right turning into green.
-                        </p>
-                        <img src="images/5.connect_iotdashboard_to_firebase/7.connection_to_firebase_status.png" alt="" class="mobile_snapshot">
-                    </div>
-
-
-                </div>
-
-                <!-- ----------------------------------------------------------------------------------- -->
-
-                <h3 class="subsection_title" id="create_an_account_and_login_subsection_title">2.2. Create an Account and Login</h3>
-                <div class="subsection" id="create_an_account_and_login_subsection">
-
-                    <div class="step" id="go_to_sign_user_login_activity_step">
-                        <p class="description">
-                            1. The final step before you can start using the IoTDashboard app, is to create a user account and login to access and manage your private data securely.
-                            For that, click on the menu icon on the top left then click on "User login" option.
-                        </p>
-                        <img src="images/6.signup_and_login/1.go_to_sign_user_login_activity.png" alt="" class="mobile_snapshot">
-                    </div>
-
-                    <div class="step" id="go_to_sign_user_login_activity_step">
-                        <p class="description">
-                            2. If you did not create a user account before, click on the "Sign up" link below the "Login" button and follow the process.
-                            After you sign up successfully, you will be redirected to the "Login" page to login to your account. Please note that you must confirm your email address before your first attemt to login, this is done through a link sent to you by email.
-                            If you don't find this confirmation link in your inbox it could be in the junk section.
-                        </p>
-                        <img src="images/6.signup_and_login/2.click_on_sign_up_or_login.png" alt="" class="mobile_snapshot">
-                    </div>
-
-                    <div class="step" id="connected_and_logged_in_and_ready_step">
-                        <p class="description">
-                            3. Upon successful login you will be redirected to the main page and you are now ready to add some "Things"!.
-                        </p>
-                        <img src="" alt="" class="mobile_snapshot">
-                    </div>
-
-                    
-
-                </div>
-
-
-                <!-- ----------------------------------------------------------------------------------- -->
-
-                <h3 class="subsection_title" id="add_things_and_topics_subsection_title">2.3. Add Things and Topics</h3>
-                <div class="subsection" id="add_things_and_topics_subsection">
-
-                    <div class="step" id="add_thing_step">
-                        <p class="description">
-                            <b>1. </b>Now, with all the all the necessary setups done properly, you can start adding things (clusters of topics) and topics within these things.
-                            To add a new thing, click on the (add) "+" floating button on the main page. 
-                        </p>
-                        <img src="images/7.add_things_and_topics/1.add_thing.png" alt="" class="mobile_snapshot">
-                    </div>
-
-
-                    <div class="step" id="assign_thing_unique_tag_and_name_or_descrition_step">
-                        <p class="description">
-                            <b>2. </b>A window will pop up asking for the tag and description og the added thing. You should always assign a unique tag otherwise it won't be accepted. 
-                            You can optionally give the new added thing a name /or description. Then click "Ok". 
-                        </p>
-                        <img src="images/7.add_things_and_topics/2.assign_thing_unique_tag_and_name_or_descrition.png" alt="" class="mobile_snapshot">
-                    </div>
-
-
-                    <div class="step" id="new_created_thing_step">
-                        <p class="description">
-                            <b>3. </b>If the new thing is properly configured, a new thing card will be added on the main page (Dashboard). To access this thing an create or monitor topics within it, click on the thing card.
-                        </p>
-                        <img src="images/7.add_things_and_topics/3.new_created_thing.png" alt="" class="mobile_snapshot">
-                    </div>
-
-
-                    <div class="step" id="add_topic_step">
-                        <p class="description">
-                            <b>4. </b>On "Topics" page toolbar you can see the tag and the description of the thing. To add a new topic, click on the (add) "+" floating button on the bottom of the "Topics" page.
-                        </p>
-                        <img src="images/7.add_things_and_topics/4.add_topic.png" alt="" class="mobile_snapshot">
-                    </div>
-
-                    <div class="step" id="add_topic_step">
-                        <p class="description">
-                            <b>5. </b>There are three available types of topics in the IoTDashboard: "Analog", "Digital" and "Text". To add an "Analog" Topic, select the corresponding radio button and give the topic a unique tag and a description (optional), then click "Ok".
-                        </p>
-                        <img src="images/7.add_things_and_topics/5.add_analog_topic.png" alt="" class="mobile_snapshot">
-                    </div>
-
-
-                    <div class="step" id="add_digital_step">
-                        <p class="description">
-                            <b>6. </b>. The same way you can add a "Digital" topic with the "Digital" radio button selected instead of the "Analog".
-                        </p>
-                        <img src="images/7.add_things_and_topics/6.add_digital_topic.png" alt="" class="mobile_snapshot">
-                    </div>
-
-                    <div class="step" id="topics_list_step">
-                        <p class="description">
-                            <b>7. </b>. You can see the added topics listed on the "Topics" page related to the thing you are working with.
-                        </p>
-                        <img src="images/7.add_things_and_topics/7.topics_list.png" alt="" class="mobile_snapshot">
-                    </div>
-
-                    
-
-                </div>
-            
-            </div>
-
-
-                <!-- ----------------------------------------------------------------------------------- -->
-
-            
-
-
-
-
-
-            </div>
-            
+        <div class="header">
+            <img src="logo/adb_logo_2.png" alt="logo" class="logo">
+            <h1 class="main_title">IoTDashboard User Guide</h1>
         </div>
+
+
+        <div class="container">
+
+
+            <div class="table_of_content">
+                <h2 class="section_title" id="table_of_content_title">Table of content:</h2>
+                <ul class="main-list">
+                    <li class="mci">
+                        <p class="ci" id="li_1"><b>1. What is IoTDashboard App?</b></p>
+                        
+                    </li>
+
+                    <li class="mci">
+                        <p class="ci" id="li_2"><b>2. Firebase Setup</b></p>
+                        <ul class="list">
+                            <li href="#" class="ci" id="li_2_1">2.1. Create Firebase Project</li>
+                            <li href="#" class="ci" id="li_2_2">2.2. Create Realtime Database</li>
+                            <li href="#" class="ci" id="li_2_3">2.3. Define User Authentication Method</li>
+                            <li href="#" class="ci" id="li_2_4">2.4. Register IoTDashboard App in Firebase</li>
+                        </ul>
+                    </li>
+
+
+                    <li class="mci">
+                        <p class="ci" id="li_3"><b>3. IoTDashboard App Setup</b></p>
+                        <ul class="list">
+                            <li href="#" class="ci" id="li_3_1">3.1. Connect IoTDashboard App to Firebase</li>
+                            <li href="#" class="ci" id="li_3_2">3.2. Create an Account and Login</li>
+                            <li href="#" class="ci" id="li_3_3">3.3. Add Things and Topics</li>
+                            <li href="#" class="ci" id="li_3_4">3.4. Topic Settings</li>
+                        </ul>
+                    </li>
+
+                    
+                </ul>
+
+
+            </div>
+
+
+
+
+            <div class="content">
+
+
+                <h2 class="section_title" id="tit_1">1. What is IoTDashboard App?</h2>
+                <div id="iotdashboard_intro_section" class="section">
+    
+                    <!-- ----------------------------------------------------------------------------------- -->
+    
+                    <div class="subsection" id="iotdashboard_intro_subsection">
+                        <p class="description">
+                            IoTDashboard is an Android app that relies on the usage of Google's Firebase realtime database
+                            as a broker to connect IoT devices.
+                            The Firebase Realtime Database is a cloud-hosted NoSQL database that allows to store and sync
+                            data in realtime, which is convenient
+                            to the IoT applications.
+                        </p>
+                        <img src="images/0.architecture/1.architecture.png" alt="" class="snapshot">
+                    </div>
+    
+                </div>
+    
+    
+                <h2 class="section_title" id="tit_2">2. Firebase Setup</h2>
+                <div id="firebase_section" class="section">
+    
+                    <!-- ----------------------------------------------------------------------------------- -->
+    
+                    <h3 class="subsection_title" id="tit_2_1">2.1. Create Firebase Project
+                    </h3>
+                    <div class="subsection" id="create_firebase_project_subsection">
+    
+                        <div class="step" id="create_gmail_account_step">
+                            <p class="description">
+                                <b>1. </b>Create a gmail account and login.
+                            </p>
+                            <img src="" alt="" class="snapshot">
+                        </div>
+    
+                        <div class="step" id="go_firebase_console_step">
+                            <p class="description">
+                                <b>2. </b>Navigate to <a href="https://console.firebase.google.com/" target="_blank"
+                                    rel="noopener noreferrer">Firebase console.</a>
+                            </p>
+                            <img src="" alt="" class="snapshot">
+                        </div>
+    
+                        <div class="step" id="create_new_project_step">
+                            <p class="description">
+                                <b>3. </b>Click on "Create a project" button.
+                            </p>
+                            <img src="images/1.create_firebase_project/1.create_new_project.png" alt="" class="snapshot">
+                        </div>
+    
+                        <div class="step" id="create_project_name_step">
+                            <p class="description">
+                                <b>4. </b>Give your project a name.
+                            </p>
+                            <img src="images/1.create_firebase_project/2.create_new_project_name.png" alt=""
+                                class="snapshot">
+                        </div>
+    
+                        <div class="step" id="enable_google_analytics_step">
+                            <p class="description">
+                                <b>5. </b>Click "Continue" button.
+                            </p>
+                            <img src="images/1.create_firebase_project/3.google_analytics.png" alt="" class="snapshot">
+                        </div>
+    
+                        <div class="step" id="choose_google_analytics_account_step">
+                            <p class="description">
+                                <b>6. </b>Click "Create project" button.
+                            </p>
+                            <img src="images/1.create_firebase_project/4.google_analytics_account.png" alt=""
+                                class="snapshot">
+                        </div>
+    
+    
+                    </div>
+    
+                    <!-- ----------------------------------------------------------------------------------- -->
+    
+                    <h3 class="subsection_title" id="tit_2_2">2.2. Create Realtime Database</h3>
+                    <div class="subsection" id="create_realtime_db_subsection">
+    
+                        <div class="step" id="create_realtime_db_step">
+                            <p class="description">
+                                <b>1. </b>In the navigation menu on the left, click on "Build" section, then click on
+                                "Realtime Database" option and hit the "Create Database" button in the middle of the screen.
+                            </p>
+                            <img src="images/2.create_realtime_db/1.create_realtime_db.png" alt="" class="snapshot">
+                        </div>
+    
+                        <div class="step" id="choose_realtime_db_location_step">
+                            <p class="description">
+                                <b>2. </b>Choose a location where you want your realtime database to be stored and click
+                                "Next".
+                            </p>
+                            <img src="images/2.create_realtime_db/2.realtime_db_location.png" alt="" class="snapshot">
+                        </div>
+    
+                        <div class="step" id="choose_security_mode_step">
+                            <p class="description">
+                                <b>3. </b>Choose any of the two security mode and click "Enable".
+                            </p>
+                            <img src="images/2.create_realtime_db/3.define_security_rules.png" alt="" class="snapshot">
+                        </div>
+    
+                        <div class="step" id="got_to_security_rules_step">
+                            <p class="description">
+                                <b>4. </b>After the realtime database is created, you want to define the security rules
+                                first of all. For that click on "Rules" tab in the "Realtime Database" page.
+                            </p>
+                            <img src="images/2.create_realtime_db/4.realtime_db_page.png" alt="" class="snapshot">
+                        </div>
+    
+                        <div class="step" id="setup_security_rules_step">
+    
+                            <div class="double_description">
+                                <p class="description">
+                                    <b>5. </b>Use the below security rules then click "Publish" button.
+                                </p>
+                                <p class="code">
+                                    {<br>
+                                    &nbsp;&nbsp;"rules": {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"$uid": {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".write": "$uid ===
+                                    auth.uid",<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".read": "$uid ===
+                                    auth.uid",<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"MaintainedConnectionPoint": {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".write": true,<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".read": true,<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                    &nbsp;&nbsp;}<br>
+                                    }<br>
+                                </p>
+                            </div>
+                            <img src="images/2.create_realtime_db/5.realtime_db_rules.png" alt="" class="snapshot">
+                        </div>
+    
+    
+                    </div>
+    
+    
+    
+                    <!-- ----------------------------------------------------------------------------------- -->
+    
+                    <h3 class="subsection_title" id="tit_2_3">2.3. Define User Authentication Method</h3>
+                    <div class="subsection" id="define_authentication_subsection">
+    
+                        <div class="step" id="access_authentication_page_step">
+                            <p class="description">
+                                <b>1. </b>In order for the Firebase to authenticate the users trying to access the data, you
+                                have to define the authentication method.
+                                For that, in the navigation menu on the left, click on "Build" section, then click on
+                                "Authentication" option and hit the "Create Database" button in the middle of the
+                                authentication page.
+                            </p>
+                            <img src="images/3.authentication_method/1.access_authentication_page.png" alt=""
+                                class="snapshot">
+                        </div>
+    
+                        <div class="step" id="choose_authentication_method_step">
+                            <p class="description">
+                                <b>2. </b>Under "Sign-in method" tab, choose "Email/Password" as the sign-in method.
+                            </p>
+                            <img src="images/3.authentication_method/2.choose_authentication_method.png" alt=""
+                                class="snapshot">
+                        </div>
+    
+                        <div class="step" id="activate_email_password_method_step">
+                            <p class="description">
+                                <b>3. </b>Enable "Email/Password" authentication method and click "Save".
+                            </p>
+                            <img src="images/3.authentication_method/3.enable_email_password_method.png" alt=""
+                                class="snapshot">
+                        </div>
+    
+    
+                    </div>
+    
+    
+                    <!-- ----------------------------------------------------------------------------------- -->
+    
+                    <h3 class="subsection_title"  id="tit_2_4">2.4. Register IoTDashboard
+                        App in Firebase</h3>
+                    <div class="subsection" id="register_iotdashboard_app_subsection">
+    
+                        <div class="step" id="go_to_project_settings_page_step">
+                            <p class="description">
+                                <b>1. </b>To be able to integrate the IoTDashboard app with your Firebase project, you have
+                                to register the app in the project.
+                                For that, click on the settings icon in the navigation menu on the left and choose "Project
+                                settings".
+                            </p>
+                            <img src="images/4.register_iotdashboard_app/1.go_to_project_settings.png" alt=""
+                                class="snapshot">
+                        </div>
+    
+                        <div class="step" id="click_on_android_icon_step">
+                            <p class="description">
+                                <b>2. </b>Under "General" tab, click on the android icon within "Your apps" section.
+                            </p>
+                            <img src="images/4.register_iotdashboard_app/2.click_on_android_icon.png" alt=""
+                                class="snapshot">
+                        </div>
+    
+                        <div class="step" id="add_the_package_name_step">
+    
+    
+                            <div class="double_description">
+                                <p class="description">
+                                    <b>3. </b>Fill in the "Android package name" input with:
+                                </p>
+                                <p class="code">
+                                    com.kandroid.iotdashboard
+                                </p>
+                            </div>
+                            <img src="images/4.register_iotdashboard_app/3.add_the_package_name.png" alt=""
+                                class="snapshot">
+                        </div>
+    
+                        <div class="step" id="next_1_step">
+                            <p class="description">
+                                <b>4. </b>Click "Next".
+                            </p>
+                            <img src="images/4.register_iotdashboard_app/4.next_1.png" alt="" class="snapshot">
+                        </div>
+    
+                        <div class="step" id="next_2_step">
+                            <p class="description">
+                                <b>5. </b>Click "Next".
+                            </p>
+                            <img src="images/4.register_iotdashboard_app/5.next_2.png" alt="" class="snapshot">
+                        </div>
+    
+                        <div class="step" id="continue_to_console_step">
+                            <p class="description">
+                                <b>6. </b>Click "Continue to console".
+                            </p>
+                            <img src="images/4.register_iotdashboard_app/6.continue_to_console.png" alt="" class="snapshot">
+                        </div>
+    
+                        <div class="step" id="continue_to_console_step">
+                            <p class="description">
+                                <b>7. </b>Now you are ready to use the IoTDashboard app.
+                            </p>
+                            <img src="" alt="" class="snapshot">
+                        </div>
+    
+                    </div>
+                </div>
+    
+    
+                <!-- ----------------------------------------------------------------------------------- -->
+    
+                <h2 class="section_title" id="tit_3">3. IoTDashboard App Setup</h2>
+                <div id="firebase_section" class="section">
+    
+                    <!-- ----------------------------------------------------------------------------------- -->
+    
+                    <h3 class="subsection_title"  id="tit_3_1">3.1. Connect
+                        IoTDashboard App to Firebase</h3>
+                    <div class="subsection" id="connect_iotdashboard_to_firebase_subsection">
+    
+                        <div class="step" id="go_to_project_settings_from_android_step">
+                            <p class="description">
+                                <b>1. </b>In order to connect the IoTDashboard app with your Firebase project you need to
+                                include a configuration file named google-services.json file into your app.
+                                To do that, login to your Firebase console from your android phone, then go to your project
+                                settings.
+                            </p>
+                            <img src="images/5.connect_iotdashboard_to_firebase/1.go_to_project_settings.png" alt=""
+                                class="mobile_snapshot">
+                        </div>
+    
+                        <div class="step" id="download_google_services_json_file_step">
+                            <p class="description">
+                                <b>2. </b>Scroll down to "Your apps" section and download "google-services.json" file.
+                            </p>
+                            <img src="images/5.connect_iotdashboard_to_firebase/2.download_google_services_gson_file.png"
+                                alt="" class="mobile_snapshot">
+                        </div>
+    
+                        <div class="step" id="go_to_connect_to_firebase_activity_step">
+                            <p class="description">
+                                <b>3. </b>Open the IoTDashboard app and click on the menu icon on the top left then click on
+                                "Connect to Firebase" option.
+                            </p>
+                            <img src="images/5.connect_iotdashboard_to_firebase/3.go_to_connect_to_firebase_activity.png"
+                                alt="" class="mobile_snapshot">
+                        </div>
+    
+                        <div class="step" id="browse_for_google_services_json_file_step">
+                            <p class="description">
+                                <b>4. </b>On the "Firebase Connection" screen, click on browse.
+                            </p>
+                            <img src="images/5.connect_iotdashboard_to_firebase/4.browse_for_google_services_json_file.png"
+                                alt="" class="mobile_snapshot">
+                        </div>
+    
+                        <div class="step" id="select_google_services_json_file_step">
+                            <p class="description">
+                                <b>5. </b>Select the "google-services.json" file you just downloaded.
+                            </p>
+                            <img src="images/5.connect_iotdashboard_to_firebase/5.select_google_services_json_file.png"
+                                alt="" class="mobile_snapshot">
+                        </div>
+    
+                        <div class="step" id="click_connect_step">
+                            <p class="description">
+                                <b>6. </b>Click on "Connect" button.
+                            </p>
+                            <img src="images/5.connect_iotdashboard_to_firebase/6.click_connect.png" alt=""
+                                class="mobile_snapshot">
+                        </div>
+    
+                        <div class="step" id="connection_to_firebase_status_step">
+                            <p class="description">
+                                <b>7. </b>If the connection with Firebase is established successfully, you should see the
+                                Firebase connection status led on the top right turning into green.
+                            </p>
+                            <img src="images/5.connect_iotdashboard_to_firebase/7.connection_to_firebase_status.png" alt=""
+                                class="mobile_snapshot">
+                        </div>
+    
+    
+                    </div>
+    
+                    <!-- ----------------------------------------------------------------------------------- -->
+    
+                    <h3 class="subsection_title" id="tit_3_2">3.2. Create an Account
+                        and Login</h3>
+                    <div class="subsection" id="create_an_account_and_login_subsection">
+    
+                        <div class="step" id="go_to_sign_user_login_activity_step">
+                            <p class="description">
+                                <b>1. </b>The final step before you can start using the IoTDashboard app, is to create a
+                                user account and login to access and manage your private data securely.
+                                For that, click on the menu icon on the top left then click on "User login" option.
+                            </p>
+                            <img src="images/6.signup_and_login/1.go_to_sign_user_login_activity.png" alt=""
+                                class="mobile_snapshot">
+                        </div>
+    
+                        <div class="step" id="go_to_sign_user_login_activity_step">
+                            <p class="description">
+                                <b>2. </b>If you did not create a user account before, click on the "Sign up" link below the
+                                "Login" button and follow the process.
+                                After you sign up successfully, you will be redirected to the "Login" page to login to your
+                                account. Please note that you must confirm your email address before your first attemt to
+                                login, this is done through a link sent to you by email.
+                                If you don't find this confirmation link in your inbox it could be in the junk section.
+                            </p>
+                            <img src="images/6.signup_and_login/2.click_on_sign_up_or_login.png" alt=""
+                                class="mobile_snapshot">
+                        </div>
+    
+                        <div class="step" id="connected_and_logged_in_and_ready_step">
+                            <p class="description">
+                                <b>3. </b>Upon successful login you will be redirected to the main page and you are now
+                                ready to add some "Things"!.
+                            </p>
+                            <img src="" alt="" class="mobile_snapshot">
+                        </div>
+    
+    
+    
+                    </div>
+    
+    
+                    <!-- ----------------------------------------------------------------------------------- -->
+    
+                    <h3 class="subsection_title" id="tit_3_3">3.3. Add Things and Topics</h3>
+                    <div class="subsection" id="add_things_and_topics_subsection">
+    
+                        <div class="step" id="add_thing_step">
+                            <p class="description">
+                                <b>1. </b>Now, with all the all the necessary setups done properly, you can start adding
+                                things (clusters of topics) and topics within these things.
+                                To add a new thing, click on the (add) "+" floating button on the main page.
+                            </p>
+                            <img src="images/7.add_things_and_topics/1.add_thing.png" alt="" class="mobile_snapshot">
+                        </div>
+    
+    
+                        <div class="step" id="assign_thing_unique_tag_and_name_or_descrition_step">
+                            <p class="description">
+                                <b>2. </b>A window will pop up asking for the tag and description og the added thing. You
+                                should always assign a unique tag otherwise it won't be accepted.
+                                You can optionally give the new added thing a name /or description. Then click "Ok".
+                            </p>
+                            <img src="images/7.add_things_and_topics/2.assign_thing_unique_tag_and_name_or_descrition.png"
+                                alt="" class="mobile_snapshot">
+                        </div>
+    
+    
+                        <div class="step" id="new_created_thing_step">
+                            <p class="description">
+                                <b>3. </b>If the new thing is properly configured, a new thing card will be added on the
+                                main page (Dashboard). To access this thing an create or monitor topics within it, click on
+                                the thing card.
+                            </p>
+                            <img src="images/7.add_things_and_topics/3.new_created_thing.png" alt=""
+                                class="mobile_snapshot">
+                        </div>
+    
+    
+                        <div class="step" id="add_topic_step">
+                            <p class="description">
+                                <b>4. </b>On "Topics" page toolbar you can see the tag and the description of the thing. To
+                                add a new topic, click on the (add) "+" floating button on the bottom of the "Topics" page.
+                            </p>
+                            <img src="images/7.add_things_and_topics/4.add_topic.png" alt="" class="mobile_snapshot">
+                        </div>
+    
+                        <div class="step" id="add_topic_step">
+                            <p class="description">
+                                <b>5. </b>There are three available types of topics in the IoTDashboard: "Analog", "Digital"
+                                and "Text". To add an "Analog" Topic, select the corresponding radio button and give the
+                                topic a unique tag and a description (optional), then click "Ok".
+                            </p>
+                            <img src="images/7.add_things_and_topics/5.add_analog_topic.png" alt="" class="mobile_snapshot">
+                        </div>
+    
+    
+                        <div class="step" id="add_digital_step">
+                            <p class="description">
+                                <b>6. </b>The same way you can add a "Digital" topic with the "Digital" radio button
+                                selected instead of the "Analog".
+                            </p>
+                            <img src="images/7.add_things_and_topics/6.add_digital_topic.png" alt=""
+                                class="mobile_snapshot">
+                        </div>
+    
+                        <div class="step" id="topics_list_step">
+                            <p class="description">
+                                <b>7. </b>You can see the added topics listed on the "Topics" page related to the thing you
+                                are working with.
+                            </p>
+                            <img src="images/7.add_things_and_topics/7.topics_list.png" alt="" class="mobile_snapshot">
+                        </div>
+    
+    
+    
+                    </div>
+    
+    
+    
+                    <!-- ----------------------------------------------------------------------------------- -->
+    
+                    <h3 class="subsection_title" id="tit_3_4">3.4. Topic Settings</h3>
+                    <div class="subsection" id="topic_settings_subsection">
+    
+                        <div class="step" id="defaults_topic_settings_step">
+                            <p class="description">
+                                <b>1. </b>Once created, the topic settings are set to default. For instance, the analog
+                                topic "Value" is 0 and the increment/decrement value "Step" is set to 1.
+                                However you can change these values by clicking on the (settings) image button in the
+                                section on the right of the topic card.
+                            </p>
+                            <img src="images/8.topics_settings/1.default_settings.png" alt="" class="mobile_snapshot">
+                        </div>
+    
+                        <div class="step" id="analog_topic_settings_step">
+                            <p class="description">
+                                <b>2. </b>In this step, I will adjust the settings of the analog topic "temp". Let's change
+                                the default "Value" from 0 to 20, and the "Step" to 0.5 instead of 1.
+                                The "Unit" will be degC. Finally the "Low limit" and "High limit" will be 16 and 30
+                                respectively, this way the increment/decrement process can't get out this interval.<br><br>
+                                As you have noticed also, you can change the access mode to the topic value from
+                                "Read/Write" to "Read only" if you wish to only monitor the value without making any
+                                changes,
+                                this is the case when you are monitoring a sensor without taking any action (e.g outdoour
+                                temperature and humidity sensor).
+                            </p>
+                            <img src="images/8.topics_settings/2.analog_topic_settings.png" alt="" class="mobile_snapshot">
+                        </div>
+    
+    
+                        <div class="step" id="adjusted_analog_topic_settings_step">
+                            <p class="description">
+                                <b>3. </b>When you go back to the "Topics" page you can notice the changes that have been
+                                made to the topic.
+                            </p>
+                            <img src="images/8.topics_settings/3.adjusted_analog_topic_settings.png" alt=""
+                                class="mobile_snapshot">
+                        </div>
+    
+    
+                        <div class="step" id="digital_topic_settings_step">
+                            <p class="description">
+                                <b>4. </b>In the same way you can adjust the digital topic settings. By default the "Text on
+                                set" and "Text on reset" values are "On" and "Off" respectively,
+                                however you can change them to be any values you wish (e.g Run/Stop, Open/Close ...).
+                            </p>
+                            <img src="images/8.topics_settings/4.digital_topic_settings.png" alt="" class="mobile_snapshot">
+                        </div>
+    
+    
+                        <div class="step" id="feedback_settings_step">
+                            <p class="description">
+                                <b>5. </b>A very important feature in the topic settings, is the feeedback feature.<br> The
+                                feedback value in control systems is used to acknowledge the reception of a
+                                message/command/signal...etc.
+                                So when you change the "Use feedback node" to "Yes" the IoTDashboard app will read the value
+                                pushed to the "Feedback_Node" and not the value of the "Value" node. This way you can be
+                                sure that the "Thing" (e.g microcontroller)
+                                you are interacting with, has received and processed your message and that you are not
+                                reading an echo of your own message.<br><br>
+                                The diagram on the right represents how the feedback process happens. It is very important
+                                to note that if you intend to use this feature you have to program your "Thing" to read from
+                                "Value" node and to write back in the "Feedback_Node" not in the "Value" node.
+                            </p>
+                            <img src="images/8.topics_settings/5.feedback_node.png" alt="" class="snapshot">
+                        </div>
+    
+    
+    
+    
+    
+    
+                    </div>
+    
+                </div>
+    
+    
+                <!-- ----------------------------------------------------------------------------------- -->
+    
+    
+    
+    
+    
+    
+    
+            </div>
+
+
+
+        </div>
+
+
+        
+
     </div>
     
 </body>
+
 </html>
