@@ -186,7 +186,7 @@
     
                             <div class="double_description">
                                 <p class="description">
-                                    <b>5. </b>Use the below security rules then click "Publish" button.
+                                    <b>2.2.5. </b>Use the below security rules then click "Publish" button.
                                 </p>
                                 <p class="code">
                                     {<br>
@@ -222,8 +222,8 @@
                             <p class="description">
                                 <b>2.3.1. </b>In order for the Firebase to authenticate the users trying to access the data, you
                                 have to define the authentication method.
-                                For that, in the navigation menu on the left, click on "Build" section, then click on
-                                "Authentication" option and hit the "Create Database" button in the middle of the
+                                In the navigation menu on the left, click on "Build", then click on
+                                "Authentication" option and hit the "Get started" button in the middle of the
                                 authentication page.
                             </p>
                             <img src="images/3.authentication_method/1.access_authentication_page.png" alt=""
@@ -232,7 +232,7 @@
     
                         <div class="step" id="choose_authentication_method_step">
                             <p class="description">
-                                <b>2.3.2. </b>Under "Sign-in method" tab, choose "Email/Password" as the sign-in method.
+                                <b>2.3.2. </b>Under "Sign-in method" tab, choose "Email/Password" method.
                             </p>
                             <img src="images/3.authentication_method/2.choose_authentication_method.png" alt=""
                                 class="snapshot">
@@ -415,10 +415,10 @@
     
                         <div class="step" id="go_to_sign_user_login_activity_step">
                             <p class="description">
-                                <b>3.2.2. </b>If you did not create a user account before, click on the "Sign up" link below the
+                                <b>3.2.2. </b>If you did not create a user account before, click on the "Sign up" text below the
                                 "Login" button and follow the process.
                                 After you sign up successfully, you will be redirected to the "Login" page to login to your
-                                account. Please note that you must confirm your email address before your first attemt to
+                                account. Please note that you must confirm your email address before your first attempt to
                                 login, this is done through a link sent to you by email.
                                 If you don't find this confirmation link in your inbox it could be in the junk section.
                             </p>
@@ -446,7 +446,7 @@
     
                         <div class="step" id="add_thing_step">
                             <p class="description">
-                                <b>3.3.1. </b>Now, with all the all the necessary setups done properly, you can start adding
+                                <b>3.3.1. </b>Now, with all the necessary setups done properly, you can start adding
                                 things (clusters of topics) and topics within these things.
                                 To add a new thing, click on the (add) "+" floating button on the main page.
                             </p>
@@ -456,7 +456,7 @@
     
                         <div class="step" id="assign_thing_unique_tag_and_name_or_descrition_step">
                             <p class="description">
-                                <b>3.3.2. </b>A window will pop up asking for the tag and description og the added thing. You
+                                <b>3.3.2. </b>A window will pop up asking for the tag and description of the added thing. You
                                 should always assign a unique tag otherwise it won't be accepted.
                                 You can optionally give the new added thing a name /or description. Then click "Ok".
                             </p>
@@ -534,7 +534,7 @@
     
                         <div class="step" id="analog_topic_settings_step">
                             <p class="description">
-                                <b>3.4.2. </b>In this step, I will adjust the settings of the analog topic "temp". Let's change
+                                <b>3.4.2. </b>In this example, I will adjust the settings of the analog topic "temp". Let's change
                                 the default "Value" from 0 to 20, and the "Step" to 0.5 instead of 1.
                                 The "Unit" will be degC. Finally the "Low limit" and "High limit" will be 16 and 30
                                 respectively, this way the increment/decrement process can't get out this interval.<br><br>
@@ -571,11 +571,10 @@
                         <div class="step" id="feedback_settings_step">
                             <p class="description">
                                 <b>3.4.5. </b>A very important feature in the topic settings, is the feeedback feature.<br> The
-                                feedback value in control systems is used to acknowledge the reception of a
-                                message/command/signal...etc.
+                                feedback value in control systems is used to acknowledge the reception of a message/command/signal...etc.
                                 So when you change the "Use feedback node" to "Yes" the IoTDashboard app will read the value
-                                pushed to the "Feedback_Node" and not the value of the "Value" node. This way you can be
-                                sure that the "Thing" (e.g microcontroller)
+                                pushed to the "Feedback_Node" and not the value of the "Value" node. This way you can ensure 
+                                that the "Thing" (e.g microcontroller)
                                 you are interacting with, has received and processed your message and that you are not
                                 reading an echo of your own message.<br><br>
                                 The diagram on the right represents how the feedback process happens. It is very important
@@ -584,22 +583,147 @@
                             </p>
                             <img src="images/8.topics_settings/5.feedback_node.png" alt="" class="snapshot">
                         </div>
-    
-    
 
-    
                     </div>
     
                 </div>
     
     
                 <!-- ----------------------------------------------------------------------------------- -->
+
+
+
+                <h2 class="section_title" id="tit_4">4. Real Test</h2>
+                <div id="firebase_section" class="section">
+    
+                    <!-- ----------------------------------------------------------------------------------- -->
+    
+                    <h3 class="subsection_title" id="tit_4_1">4.1. IoTDashboard with ESP32 Development Board</h3>
+                    <div class="subsection" id="ESP32_subsection">
+    
+                        <div class="step" id="open_adruino_ide_step">
+                            <p class="description">
+                                <b>4.1.1. </b>Open Arduino IDE (Please make sure that all the necessary configurations to program the ESP32 with Arduino IDE should be done before proceeding).
+                            </p>
+                            <img src="" alt="" class="snapshot">
+                        </div>
+    
+                        <div class="step" id="install_firebase_client_library_step">
+                            <p class="description">
+                                <b>4.1.2. </b> Using the Library Manager under (Tools>Manage libraries), search for "Firebase ESP32 Client" library by Mobizt and install it.
+                            </p>
+                            <img src="images/9.iotdashboard_with_esp32/1.install_firebase_esp32_client_by_mobizt.png" alt="" class="snapshot">
+                        </div>
+
+                        <div class="step" id="select_the_auth_example_step">
+                            <p class="description">
+                                <b>4.1.3. </b> After installing the library, select: File> Examples> Firebase ESP32 Client> Authentications> SignInAsUser> EmailPassword.
+                            </p>
+                            <img src="images/9.iotdashboard_with_esp32/2.go_to_firebase_esp32_authentication_email_password_example.png" alt="" class="snapshot">
+                        </div>
+
+                        <div class="step" id="fill_in_wifi_cred_step">
+                            <p class="description">
+                                <b>4.1.4. </b> Fill in the WIFI password and Id using your WiFi credentials.
+                            </p>
+                            <img src="images/9.iotdashboard_with_esp32/3.define_your_wifi_credentials.png" alt="" class="snapshot">
+                        </div>
+
+                        <div class="step" id="get_firebase_url_and_api_key_step">
+                            <p class="description">
+                                <b>4.1.5. </b> Download the google-services.json file, open it and note your firebase project url and the api key.
+                            </p>
+                            <img src="images/9.iotdashboard_with_esp32/4.download_the_google_services_json_file.png" alt="" class="snapshot">
+                        </div>
+
+                        <div class="step" id="fill_in_url_api_email_password_step">
+                            <p class="description">
+                                <b>4.1.6. </b> Fill in the firebase_url, api_key, email and password listed in the .ino sketch.
+                            </p>
+                            <img src="images/9.iotdashboard_with_esp32/5.define_firebase_options_and_credentials.png" alt="" class="snapshot">
+                        </div>
+
+                        <div class="step" id="comment_out_the_rule_modification_code_step">
+                            <p class="description">
+                                <b>4.1.7. </b> Comment out or delete the firebase RTDB rules modification code as we already set the rules in section 2.2.5.
+                            </p>
+                            <img src="images/9.iotdashboard_with_esp32/6.comment_out_the_rule_modification_code.png" alt="" class="snapshot">
+                        </div>
+
+                        <div class="step" id="increase_the_execution_delay_time_step">
+                            <p class="description">
+                                <b>4.1.8. </b> Increase the execution time delay to reduce the Read/Write operations in Firebase RTDB.
+                            </p>
+                            <img src="images/9.iotdashboard_with_esp32/7.reduce_the_execution_time_interval.png" alt="" class="snapshot">
+                        </div>
+    
+                        <div class="step" id="construct_the_path_step">
+                            <p class="description">
+                                <b>4.1.9. </b> Now we have to construct the path to the topic in order to read and write the Value or the Feadback of the topic. The path has the following form (attention to the capital letters): <br><br>
+                                <b>path to the topic = {userid}/Things/{topic}</b>  <br><br>
+                                <b>path to the value of the topic = {userid}/Things/{topic}/Value</b> <br><br>
+                                <b>path to the feedback of the topic = {userid}/Things/{topic}/Feedback</b> <br> <br>
+                                For example if we want to construct the path to the room temperature topic we created earlier in step 3.3.5 <b>(topic = rm_1/temp)</b>: <br><br>
+                                 the path to the topic would be: <br>
+                                <b>{userid}/Things/rm_1/temp</b> <br><br>
+                                and the path to the value is: <br>
+                                <b>{userid}/Things/rm_1/temp/Value</b><br><br>
+                                in the same way the path to the feedback is: <br>
+                                <b>{userid}/Things/rm_1/temp/Feedback </b><br><br>
+
+                            </p>
+                            <img src="" alt="" class="mobile_snapshot">
+                        </div>
+
+                        <div class="step" id="get_the_user_id_step">
+                            <p class="description">
+                                <b>4.1.10. </b> To get the user id, include the following line of code: <br><br>
+                                <b>String user_id = auth.token.uid.c_str();</b>
+                            </p>
+                            <img src="images/9.iotdashboard_with_esp32/8.get_the_user_id.png" alt="" class="snapshot">
+                        </div>
+
+                        <div class="step" id="full_path_to_the_topic_step">
+                            <p class="description">
+                                <b>4.1.11. </b> Then construct the path to the topic: <br><br>
+                                <b>String path = user_id+"/Things/" + room1_temp_topic;</b>
+                            </p>
+                            <img src="images/9.iotdashboard_with_esp32/9.construct_the_full_path_to_the_topic.png" alt="" class="snapshot">
+                        </div>
+
+                        <div class="step" id="write_the_value_of_topic_step">
+                            <p class="description">
+                                <b>4.1.12. </b> Finally, to demonstrate the functionality, we increase a variable called fake_temp by 0.5 and we write (setFloat) in the topic's "Value" each 10 seconds. This should reflect in your IoTDashboard app. If the code is not successfully executed the error reason will be printed on the serial monitor, otherwise an "ok" message will be printed out.   <br><br>
+                                <b>Serial.printf("Set float... %s\n", Firebase.setFloat(fbdo, path + "/Value", fake_temp+0.5) ? "ok" : fbdo.errorReason().c_str());</b>
+                            </p>
+                            <img src="images/9.iotdashboard_with_esp32/10.write_in_topic_value.png" alt="" class="snapshot">
+                        </div>
+    
+
+
+
+
+
+
+
+
+
+
+                        
     
     
+                    </div>
     
-    
-    
-    
+                    
+                </div>
+
+
+
+
+
+
+
+                <!-- ----------------------------------------------------------------------------------- -->
     
             </div>
 
