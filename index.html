@@ -58,6 +58,13 @@
                         </ul>
                     </li>
 
+                    <li class="mci">
+                        <p class="ci" id="li_4"><b>4. Real Test</b></p>
+                        <ul class="list">
+                            <li href="#" class="ci" id="li_4_1">4.1. IoTDashboard with ESP32 Development Board</li>
+                        </ul>
+                    </li>
+
                     
                 </ul>
 
@@ -603,7 +610,8 @@
     
                         <div class="step" id="open_adruino_ide_step">
                             <p class="description">
-                                <b>4.1.1. </b>Open Arduino IDE (Please make sure that all the necessary configurations to program the ESP32 with Arduino IDE should be done before proceeding).
+                                <b>4.1.1. </b>In the example we will program the ESP32 using Arduino IDE to read a topic value and use it to make some calculation then write the result in the feedback of the same topic. (Please make sure that all the necessary configurations to program the ESP32 with Arduino IDE should be done before proceeding).
+                                <a download="EmailPassword Eample" href="./EmailPassword/EmailPassword.ino">Click here to see the full code</a>
                             </p>
                             <img src="" alt="" class="snapshot">
                         </div>
@@ -660,16 +668,16 @@
                         <div class="step" id="construct_the_path_step">
                             <p class="description">
                                 <b>4.1.9. </b> Now we have to construct the path to the topic in order to read and write the Value or the Feadback of the topic. The path has the following form (attention to the capital letters): <br><br>
-                                <b>path to the topic = {userid}/Things/{topic}</b>  <br><br>
-                                <b>path to the value of the topic = {userid}/Things/{topic}/Value</b> <br><br>
-                                <b>path to the feedback of the topic = {userid}/Things/{topic}/Feedback</b> <br> <br>
+                                <b class="code">path to the topic = {userid}/Things/{topic}</b>  <br><br>
+                                <b class="code">path to the value of the topic = {userid}/Things/{topic}/Value</b> <br><br>
+                                <b class="code">path to the feedback of the topic = {userid}/Things/{topic}/Feedback</b> <br> <br>
                                 For example if we want to construct the path to the room temperature topic we created earlier in step 3.3.5 <b>(topic = rm_1/temp)</b>: <br><br>
                                  the path to the topic would be: <br>
-                                <b>{userid}/Things/rm_1/temp</b> <br><br>
+                                <b class="code">{userid}/Things/rm_1/temp</b> <br><br>
                                 and the path to the value is: <br>
-                                <b>{userid}/Things/rm_1/temp/Value</b><br><br>
+                                <b class="code">{userid}/Things/rm_1/temp/Value</b><br><br>
                                 in the same way the path to the feedback is: <br>
-                                <b>{userid}/Things/rm_1/temp/Feedback </b><br><br>
+                                <b class="code">{userid}/Things/rm_1/temp/Feedback </b><br><br>
 
                             </p>
                             <img src="" alt="" class="mobile_snapshot">
@@ -678,7 +686,7 @@
                         <div class="step" id="get_the_user_id_step">
                             <p class="description">
                                 <b>4.1.10. </b> To get the user id, include the following line of code: <br><br>
-                                <b>String user_id = auth.token.uid.c_str();</b>
+                                <b class="code">String user_id = auth.token.uid.c_str();</b>
                             </p>
                             <img src="images/9.iotdashboard_with_esp32/8.get_the_user_id.png" alt="" class="snapshot">
                         </div>
@@ -686,19 +694,26 @@
                         <div class="step" id="full_path_to_the_topic_step">
                             <p class="description">
                                 <b>4.1.11. </b> Then construct the path to the topic: <br><br>
-                                <b>String path = user_id+"/Things/" + room1_temp_topic;</b>
+                                <b class="code">String path = user_id+"/Things/" + room1_temp_topic;</b>
                             </p>
                             <img src="images/9.iotdashboard_with_esp32/9.construct_the_full_path_to_the_topic.png" alt="" class="snapshot">
                         </div>
 
-                        <div class="step" id="write_the_value_of_topic_step">
+                        <div class="step" id="read_the_value_of_topic_step">
                             <p class="description">
-                                <b>4.1.12. </b> Finally, to demonstrate the functionality, we increase a variable called fake_temp by 0.5 and we write (setFloat) in the topic's "Value" each 10 seconds. This should reflect in your IoTDashboard app. If the code is not successfully executed the error reason will be printed on the serial monitor, otherwise an "ok" message will be printed out.   <br><br>
-                                <b>Serial.printf("Set float... %s\n", Firebase.setFloat(fbdo, path + "/Value", fake_temp+0.5) ? "ok" : fbdo.errorReason().c_str());</b>
+                                <b>4.1.12. </b> With this piece of code, we are reading the value of the rm_1/temp topic as a String then we convert it to a Float type and we print it on the serial monitor.   <br><br>
+                                <!-- <b class="code">Serial.printf("Set float... %s\n", Firebase.setFloat(fbdo, path + "/Value", fake_temp+0.5) ? "ok" : fbdo.errorReason().c_str());</b> -->
                             </p>
-                            <img src="images/9.iotdashboard_with_esp32/10.write_in_topic_value.png" alt="" class="snapshot">
+                            <img src="images/9.iotdashboard_with_esp32/10.read_topic_value.png" alt="" class="snapshot">
                         </div>
-    
+                        
+                        <div class="step" id="write_in_the_feedback_of_topic_step">
+                            <p class="description">
+                                <b>4.1.13. </b> After reading the value in the previous step, we can either override the value node or write in the feedback node. Here we are taking the value of the topic and incrementing it by 1 then writing the result in the feedback node of the same topic. Please note that when you want to use the feedback node you have to activate the "Use Feedback Node" option within the topic settings.   <br><br>
+                                <!-- <b class="code">Serial.printf("Set float... %s\n", Firebase.setFloat(fbdo, path + "/Value", fake_temp+0.5) ? "ok" : fbdo.errorReason().c_str());</b> -->
+                            </p>
+                            <img src="images/9.iotdashboard_with_esp32/11.write_in_topic_feedback.png" alt="" class="snapshot">
+                        </div>
 
 
 
