@@ -36,7 +36,7 @@ function scrollFunction() {
 function topFunction() {
     $(function () {
         $('html,body').animate({
-            scrollTop: $(".main").offset().top
+            scrollTop: $("nav").offset().top
         }, 800);
     });
 }
